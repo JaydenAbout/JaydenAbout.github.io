@@ -1,4 +1,3 @@
-# JaydenAbout.github.io
 # Jayden Chen – Personal Portfolio Website 🌐
 
 This repository hosts my **personal portfolio website**, built with **HTML + CSS** and deployed via **GitHub Pages**.
