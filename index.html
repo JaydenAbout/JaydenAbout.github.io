@@ -9,7 +9,14 @@
   <meta property="og:description" content="Data Analytics · UX/HF · M.Eng Systems Design Engineering" />
   <meta property="og:type" content="website" />
   <style>
-    :root { color-scheme: light dark; --w: 880px; --r: 16px; }
+    :root { 
+      color-scheme: light dark;
+      --w: 880px;
+      --r: 16px;
+      --brand: #2563EB;
+      --brand-600: #1D4ED8;
+      --brand-700: #1E40AF;
+    }
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
            margin: 0; padding: 32px; line-height: 1.6; }
     main { max-width: var(--w); margin: 0 auto; }
@@ -23,6 +30,24 @@
     .tag { display:inline-block; padding:2px 8px; border-radius:999px;
            border:1px solid color-mix(in oklab, canvastext, transparent 85%);
            font-size:12px; margin-right:6px }
+    .btn {
+      display:inline-block;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:12px;
+      background:var(--brand);
+      color:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      transition: transform .12s, background .12s, box-shadow .12s;
+    }
+    .btn:hover {
+      background: var(--brand-600);
+      text-decoration:none;
+    }
+    .btn:active {
+      background: var(--brand-700);
+      transform: translateY(1px);
+    }
   </style>
 </head>
 
@@ -30,7 +55,7 @@
 <main>
   <header>
     <h1>Jayden Chen</h1>
-    <p>Data Analytics · UX/HF · M.Eng Systems Design Engineering</p>
+    <p>Data Analytics · UX/HF · M.Eng. Systems Design Engineering</p>
     <p>
       <span class="tag">Python</span>
       <span class="tag">SQL</span>
@@ -39,34 +64,34 @@
       <span class="tag">SPSS</span>
     </p>
     <p>
-      <a href="mailto:JaydenAbout@outlook.com">JaydenAbout@outlook.com</a> ·
-      <a href="https://www.linkedin.com/in/junyan-chen" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="https://github.com/JaydenAbout" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="mailto:JaydenAbout@outlook.com">JaydenAbout@outlook.com</a> ·
+      <a class="btn" href="https://www.linkedin.com/in/junyan-chen" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a class="btn" href="https://github.com/JaydenAbout" target="_blank" rel="noopener">GitHub</a>
     </p>
   </header>
 
   <section>
     <h2>Academic & Career</h2>
     <ul>
-      <li><strong>M.Eng, Systems Design Engineering</strong> – University of Waterloo (2024 - 2025)</li>
-      <li><strong>Data Analyst</strong> – PricewaterhouseCoopers (PwC) Chengdu SDC (2022 - 2023)</li>
-      <li><strong>B.S. Mathematics</strong> – Truman State University (2018 - 2022)</li>
+      <li><strong>M.Eng., Systems Design Engineering</strong> – University of Waterloo (2024-2025)</li>
+      <li><strong>Data Analyst</strong> – PwC Chengdu SDC (2022-2023)</li>
+      <li><strong>B.S., Mathematics</strong> – Truman State University (2018-2022)</li>
     </ul>
   </section>
 
   <section>
     <h2>Areas of Interest</h2>
     <ul>
-      <li>Data technique application on Finance, Engineering & Health</li>
-      <li>Data administration & visualization</li>
-      <li>Human factors & user research</li>
-      <li>Fitness, nutrition, sports, mechanics</li>
+      <li>Data applications in finance, engineering, and health</li>
+      <li>Data administration and visualization</li>
+      <li>Human factors and user experience</li>
+      <li>Fitness, nutrition, sports, and mechanics</li>
     </ul>
   </section>
 
   <section>
-  <h2>Projects</h2>
-  <div class="grid">
+    <h2>Projects</h2>
+    <div class="grid">
 
     <div>
       <h3>Fitune – Fitness & Nutrition Tracker</h3>
