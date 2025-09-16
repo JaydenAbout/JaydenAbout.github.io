@@ -30,24 +30,28 @@
     .tag { display:inline-block; padding:2px 8px; border-radius:999px;
            border:1px solid color-mix(in oklab, canvastext, transparent 85%);
            font-size:12px; margin-right:6px }
+    
     .btn {
       display:inline-block;
-      font-weight:600;
-      padding:10px 14px;
-      border-radius:12px;
-      background:var(--brand);
-      color:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      transition: transform .12s, background .12s, box-shadow .12s;
+      font-weight:500;
+      font-size:0.9rem;  
+      padding:6px 10px;          
+      border-radius:8px;            
+      background:color-mix(in oklab, canvas, canvastext 6%);
+      color:canvastext;
+      border:1px solid color-mix(in oklab, canvastext, transparent 80%);
+      transition: all .15s ease;
     }
     .btn:hover {
-      background: var(--brand-600);
+      background:color-mix(in oklab, canvas, canvastext 10%);
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
       text-decoration:none;
     }
     .btn:active {
-      background: var(--brand-700);
-      transform: translateY(1px);
+      background:color-mix(in oklab, canvas, canvastext 15%);
+      transform:translateY(1px);
     }
+
   </style>
 </head>
 
