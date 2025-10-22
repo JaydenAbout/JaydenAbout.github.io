@@ -51,26 +51,69 @@
       transform:translateY(1px);
     }
 
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    
+    .profile .info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 10%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    
+    @media (max-width: 640px) {
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-photo {
+        width: 96px;
+        height: 96px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 <main>
   <header>
-    <h1>Jayden Chen</h1>
-    <p>Data Analytics · UX/HF · M.Eng. Systems Design Engineering</p>
-    <p>
-      <span class="tag">Python</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Power BI</span>
-      <span class="tag">R</span>
-      <span class="tag">SPSS</span>
-    </p>
-    <p>
-      <a class="btn" href="mailto:JaydenAbout@outlook.com">JaydenAbout@outlook.com</a> ·
-      <a class="btn" href="https://www.linkedin.com/in/junyan-chen" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a class="btn" href="https://github.com/JaydenAbout" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <div class="profile">
+      <div class="info">
+        <h1>Jayden Chen</h1>
+        <p>Data Analytics · UX/HF · M.Eng. Systems Design Engineering</p>
+        <p>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">R</span>
+          <span class="tag">SPSS</span>
+        </p>
+        <p>
+          <a class="btn" href="mailto:JaydenAbout@outlook.com">JaydenAbout@outlook.com</a> ·
+          <a class="btn" href="https://www.linkedin.com/in/junyan-chen" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a class="btn" href="https://github.com/JaydenAbout" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+  
+      <img
+        src="images/SunShine.jpg"
+        alt="Jayden Chen"
+        class="profile-photo"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </header>
 
   <section>
