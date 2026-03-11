@@ -12,7 +12,8 @@ const projects = [
     icon: Eye,
     overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning, and alarm in vision, hearing and touch.",
     problem: "Driver drowsiness is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
-    solution: "Developed a lightweight convolutional neural network (CNN) to analyze driver facial features including eye closure and mouth opening frequency for real-time drowsiness detection.",
+    targetUsers: "Long-haul truck drivers, ride-share drivers, and fleet management companies seeking to reduce fatigue-related accidents.",
+    productIdea: "A non-intrusive, camera-based monitoring solution that continuously analyzes driver alertness and delivers timely multi-sensory alerts (visual, audio, haptic) before dangerous drowsiness levels are reached.",
     role: [
       "Product requirement definition",
       "CNN model design",
@@ -20,7 +21,7 @@ const projects = [
       "Hardware and software integration"
     ],
     impact: [
-      { label: "drowsiness Detection Accuracy", value: "95%" },
+      { label: "Drowsiness Detection Accuracy", value: "95%" },
       { label: "Inference Latency", value: "40 ms" },
       { label: "Monitoring Capability", value: "Real-time" }
     ]
@@ -32,7 +33,8 @@ const projects = [
     icon: Lightbulb,
     overview: "Fitune is an AI-assisted nutrition and fitness tracking concept designed to simplify daily diet management and help users maintain sustainable fitness habits.",
     problem: "Most fitness tracking apps require manual calorie counting and provide limited personalized feedback, which makes long-term adherence difficult.",
-    solution: "Designed an AI-assisted nutrition tracking concept that estimates calorie intake, tracks macronutrients, and provides adaptive dietary suggestions based on user goals.",
+    targetUsers: "Health-conscious individuals and fitness enthusiasts who want effortless diet tracking without tedious manual input.",
+    productIdea: "An intelligent nutrition companion that uses AI to automatically estimate meals, track macros, and deliver personalized dietary insights that adapt to each user's goals and eating patterns.",
     role: [
       "Product concept design",
       "User journey design",
@@ -137,14 +139,26 @@ export default function ProjectsPage() {
                       </section>
                     )}
 
-                    {/* Solution */}
-                    {"solution" in currentProject && currentProject.solution && (
+                    {/* Target Users */}
+                    {"targetUsers" in currentProject && currentProject.targetUsers && (
                       <section>
                         <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Solution
+                          Target Users
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          {currentProject.solution}
+                          {currentProject.targetUsers}
+                        </p>
+                      </section>
+                    )}
+
+                    {/* Product Idea */}
+                    {"productIdea" in currentProject && currentProject.productIdea && (
+                      <section>
+                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                          Product Idea
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {currentProject.productIdea}
                         </p>
                       </section>
                     )}
