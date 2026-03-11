@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github, X, ChevronLeft, ChevronRight, Phone } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
@@ -70,9 +70,19 @@ const certifications = [
 
 const contactLinks = [
   {
-    label: "Email",
+    label: "QQ Mail",
     icon: Mail,
-    href: "mailto:contact@example.com"
+    href: "mailto:741263218@qq.com"
+  },
+  {
+    label: "Outlook",
+    icon: Mail,
+    href: "mailto:Jaydenabout@outlook.com"
+  },
+  {
+    label: "Phone",
+    icon: Phone,
+    href: "tel:13488940508"
   },
   {
     label: "LinkedIn",
