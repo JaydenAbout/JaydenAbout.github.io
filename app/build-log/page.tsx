@@ -16,9 +16,13 @@ const versions = [
     title: "UX Improvements",
     status: "completed",
     items: [
-      "Improved content structure",
-      "Refined project storytelling",
-      "Optimized layout and readability"
+      "Added profile photo to Hero section with responsive layout",
+      "Reorganized Focus Areas next to Hero content",
+      "Added time periods to project details",
+      "Created Work section in About page with PwC experience",
+      "Added location and time period info to Education section",
+      "Fixed button click interactivity issues",
+      "Removed redundant sections for cleaner layout"
     ]
   },
   {
