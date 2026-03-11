@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
-              Junyan Chen
+              Jayden Chen
             </h1>
             <div className="space-y-1 mb-6">
               <p className="text-2xl md:text-3xl font-semibold text-primary">
@@ -113,7 +113,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Junyan Chen. All rights reserved.
+          © {new Date().getFullYear()}  Chen. All rights reserved.
         </p>
       </footer>
     </div>

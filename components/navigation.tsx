@@ -21,7 +21,7 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors">
-          Junyan Chen
+          Jayden Chen
         </Link>
 
         {/* Desktop Navigation */}

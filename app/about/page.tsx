@@ -171,7 +171,7 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Junyan Chen. All rights reserved.
+          © {new Date().getFullYear()} Jayden Chen. All rights reserved.
         </p>
       </footer>
     </div>
