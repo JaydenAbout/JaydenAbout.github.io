@@ -33,7 +33,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-6">
             {/* Left - Hero Content */}
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
