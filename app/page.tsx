@@ -44,7 +44,7 @@ export default function HomePage() {
                   AI Product Builder
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  MEng in System Design Engineer @ University of Waterloo
+                  MEng in System Design Engineer
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-muted-foreground">
                   iFlytek Certified AI Engineer
