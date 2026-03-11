@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Brain, Users, Zap, BarChart3 } from "lucide-react"
 
@@ -59,21 +60,35 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right - Focus Areas */}
-            <div className="lg:w-72 flex-shrink-0 lg:mt-24">
-              <h2 className="text-sm font-medium text-muted-foreground mb-3">Focus Areas</h2>
-              <div className="flex flex-col gap-2">
-                {focusAreas.map((area) => (
-                  <div
-                    key={area.title}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300"
-                  >
-                    <area.icon className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm font-medium text-foreground">
-                      {area.title}
-                    </span>
-                  </div>
-                ))}
+            {/* Right - Photo and Focus Areas */}
+            <div className="flex flex-col items-center lg:items-end gap-6 flex-shrink-0">
+              {/* Profile Photo */}
+              <div className="relative w-48 h-60 rounded-xl overflow-hidden border-2 border-border shadow-lg">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Jayden Chen"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              
+              {/* Focus Areas */}
+              <div className="w-full lg:w-72">
+                <h2 className="text-sm font-medium text-muted-foreground mb-3">Focus Areas</h2>
+                <div className="flex flex-col gap-2">
+                  {focusAreas.map((area) => (
+                    <div
+                      key={area.title}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300"
+                    >
+                      <area.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">
+                        {area.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
