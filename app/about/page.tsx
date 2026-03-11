@@ -116,7 +116,7 @@ export default function AboutPage() {
               I am a Systems Design Engineering graduate from the University of Waterloo with a background in mathematics and data analysis.
             </p>
             <p>
-              My interests lie at the intersection of AI technology, human-centered design, and product development.
+              I focus on building AI-powered products that combine data insights, machine learning, and user-centered design to solve real-world problems.
             </p>
           </div>
         </section>
