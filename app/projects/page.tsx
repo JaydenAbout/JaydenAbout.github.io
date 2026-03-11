@@ -2,12 +2,13 @@
 
 import { useState } from "react"
 import { cn } from "@/lib/utils"
-import { Eye, Lightbulb, Wrench, TrendingUp, ChevronRight, Briefcase } from "lucide-react"
+import { Eye, Lightbulb, TrendingUp, ChevronRight } from "lucide-react"
 
 const projects = [
   {
     id: "driver-drowsiness",
     title: "Drowsiness Detection and Alert System for Driving Safety",
+    period: "2024 - 2025",
     icon: Eye,
     overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning, and alarm in vision, hearing and touch.",
     problem: "Driver drowsiness is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
@@ -27,6 +28,7 @@ const projects = [
   {
     id: "fitune",
     title: "Fitune AI Nutrition Project",
+    period: "2025 - 2026",
     icon: Lightbulb,
     overview: "Fitune is an AI-assisted nutrition and fitness tracking concept designed to simplify daily diet management and help users maintain sustainable fitness habits.",
     problem: "Most fitness tracking apps require manual calorie counting and provide limited personalized feedback, which makes long-term adherence difficult.",
@@ -46,6 +48,7 @@ const projects = [
   {
     id: "business-analytics",
     title: "Business Analytics Project",
+    period: "2024",
     icon: TrendingUp,
     overview: "A business analytics study using financial and market data to evaluate growth opportunities in the electronics recycling industry.",
     keyWork: [
@@ -54,14 +57,6 @@ const projects = [
       "Built Power BI dashboards for data visualization",
       "Presented insights to stakeholders"
     ]
-  },
-  {
-    id: "work-experience",
-    title: "Work Experience",
-    icon: Briefcase,
-    isPlaceholder: true,
-    overview: "Professional experience section - content coming soon.",
-    placeholder: "This section will be updated with detailed work experience information."
   }
 ]
 
@@ -107,20 +102,19 @@ export default function ProjectsPage() {
           <div className="flex-1 min-w-0">
             {currentProject && (
               <article className="bg-card rounded-xl border border-border p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <currentProject.icon className="h-8 w-8 text-primary" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                    {currentProject.title}
-                  </h2>
+                <div className="flex items-start gap-3 mb-6">
+                  <currentProject.icon className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                      {currentProject.title}
+                    </h2>
+                    {"period" in currentProject && currentProject.period && (
+                      <p className="text-sm text-muted-foreground mt-1">{currentProject.period}</p>
+                    )}
+                  </div>
                 </div>
 
-                {currentProject.isPlaceholder ? (
-                  <div className="py-12 text-center">
-                    <Briefcase className="h-16 w-16 text-muted-foreground/30 mx-auto mb-4" />
-                    <p className="text-muted-foreground">{currentProject.placeholder}</p>
-                  </div>
-                ) : (
-                  <div className="space-y-8">
+                <div className="space-y-8">
                     {/* Overview */}
                     <section>
                       <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
@@ -223,7 +217,6 @@ export default function ProjectsPage() {
                       </section>
                     )}
                   </div>
-                )}
               </article>
             )}
           </div>

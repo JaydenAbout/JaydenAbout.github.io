@@ -1,4 +1,4 @@
-import { GraduationCap, Code, Palette, BarChart3, Award, Mail, Linkedin, Github } from "lucide-react"
+import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github } from "lucide-react"
 import Link from "next/link"
 
 const skills = [
@@ -27,12 +27,25 @@ const skills = [
 const education = [
   {
     school: "University of Waterloo",
+    location: "Waterloo, ON, Canada",
+    period: "2024 - 2025",
     degree: "Master of Engineering – Systems Design Engineering"
   },
   {
     school: "Truman State University",
+    location: "Kirksville, MO, USA",
+    period: "2018 - 2022",
     degree: "Bachelor of Science – Mathematics",
     minor: "Minor in Statistics"
+  }
+]
+
+const workExperience = [
+  {
+    company: "PricewaterhouseCoopers (PwC) Chengdu SDC",
+    location: "Chengdu, China",
+    period: "2022 - 2023",
+    title: "Associate, Data Analysis"
   }
 ]
 
@@ -92,12 +105,38 @@ export default function AboutPage() {
             {education.map((edu, index) => (
               <div key={index} className="flex gap-4 p-4 rounded-lg bg-card border border-border">
                 <GraduationCap className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">{edu.school}</h3>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
+                    <h3 className="font-semibold text-foreground">{edu.school}</h3>
+                    <span className="text-sm text-muted-foreground">{edu.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-1">{edu.location}</p>
                   <p className="text-muted-foreground">{edu.degree}</p>
                   {edu.minor && (
                     <p className="text-sm text-muted-foreground mt-1">{edu.minor}</p>
                   )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Work Section */}
+        <section className="mb-16">
+          <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
+            Work
+          </h2>
+          <div className="space-y-6">
+            {workExperience.map((work, index) => (
+              <div key={index} className="flex gap-4 p-4 rounded-lg bg-card border border-border">
+                <Briefcase className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
+                    <h3 className="font-semibold text-foreground">{work.company}</h3>
+                    <span className="text-sm text-muted-foreground">{work.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-1">{work.location}</p>
+                  <p className="text-muted-foreground">{work.title}</p>
                 </div>
               </div>
             ))}
