@@ -17,7 +17,7 @@ const focusAreas = [
   {
     icon: Zap,
     title: "Rapid AI Prototyping",
-    description: "Fast iteration from concept to functional prototype"
+    description: "Turning product ideas into testable AI prototypes quickly"
   },
   {
     icon: BarChart3,
@@ -41,19 +41,10 @@ export default function HomePage() {
               </h1>
               <div className="space-y-1 mb-6">
                 <p className="text-2xl md:text-3xl font-semibold text-primary">
-                  AI Product Builder
+                  AI Product Manager
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  MEng in System Design Engineer
-                </p>
-                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  iFlytek Certified AI Engineer
-                </p>
-                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  Data Analyst
-                </p>
-                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  UX Researcher
+                  MEng in Systems Design Engineering
                 </p>
               </div>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">

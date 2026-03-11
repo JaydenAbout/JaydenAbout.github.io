@@ -84,16 +84,6 @@ const contactLinks = [
     icon: Phone,
     href: "tel:13488940508"
   },
-  {
-    label: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com"
-  },
-  {
-    label: "GitHub",
-    icon: Github,
-    href: "https://github.com"
-  }
 ]
 
 export default function AboutPage() {
@@ -212,8 +202,8 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-3">
             {certifications.map((cert, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex items-center gap-3 p-4 rounded-lg bg-card border border-border ${cert.hasImages ? 'cursor-pointer hover:border-primary/50 transition-colors' : ''}`}
                 onClick={() => cert.hasImages && setCertModalOpen(true)}
               >
