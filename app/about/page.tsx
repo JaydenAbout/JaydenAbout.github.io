@@ -63,7 +63,7 @@ export default function AboutPage() {
   const workExperience = [
     {
       companyKey: "work.pwc",
-      locationKey: "edu.pwc.place",
+      locationKey: "work.pwc.place",
       period: "2022 - 2023",
       titleKey: "work.pwc.title"
     }
