@@ -6,12 +6,12 @@ import { Eye, Lightbulb, Wrench, TrendingUp, ChevronRight, Briefcase } from "luc
 
 const projects = [
   {
-    id: "driver-fatigue",
-    title: "Driver Fatigue Detection System",
+    id: "driver-drowsiness",
+    title: "Drowsiness Detection and Alert System for Driving Safety",
     icon: Eye,
-    overview: "An AI-powered driver fatigue monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning.",
-    problem: "Driver fatigue is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
-    solution: "Developed a lightweight convolutional neural network (CNN) to analyze driver facial features and head movements for real-time fatigue detection.",
+    overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning.",
+    problem: "Driver drowsiness is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
+    solution: "Developed a lightweight convolutional neural network (CNN) to analyze driver facial features and head movements for real-time drowsiness detection.",
     role: [
       "Product requirement definition",
       "CNN model design",
@@ -19,7 +19,7 @@ const projects = [
       "Hardware and software integration"
     ],
     impact: [
-      { label: "Fatigue Detection Accuracy", value: "95%" },
+      { label: "drowsiness Detection Accuracy", value: "95%" },
       { label: "Inference Latency", value: "40 ms" },
       { label: "Monitoring Capability", value: "Real-time" }
     ]
