@@ -47,25 +47,18 @@ export default function HomePage() {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               Building AI-powered products through human-centered design and rapid prototyping.
             </p>
-            <Button asChild size="lg" className="group">
-              <Link href="/projects">
-                View My Projects
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button asChild size="lg" className="group">
+                <Link href="/projects">
+                  View My Projects
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <span className="text-muted-foreground">
+                Systems Design Engineering @ University of Waterloo
+              </span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-3xl">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I am a Systems Design Engineering graduate from the University of Waterloo with a background in mathematics and AI systems.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            My work focuses on transforming AI technologies into real-world products, combining human-centered design, data analysis, and rapid prototyping with modern AI development tools.
-          </p>
         </div>
       </section>
 
