@@ -47,13 +47,13 @@ export default function AboutPage() {
   const education = [
     {
       schoolKey: "edu.waterloo",
-      location: "Waterloo, ON, Canada",
+      locationKey: "edu.waterloo.place",
       period: "2024 - 2025",
       degreeKey: "edu.waterloo.degree"
     },
     {
       schoolKey: "edu.truman",
-      location: "Kirksville, MO, USA",
+      locationKey: "edu.truman.place",
       period: "2018 - 2022",
       degreeKey: "edu.truman.degree",
       minorKey: "edu.truman.minor"
@@ -63,7 +63,7 @@ export default function AboutPage() {
   const workExperience = [
     {
       companyKey: "work.pwc",
-      location: "Chengdu, Sichuan, China",
+      locationKey: "edu.pwc.place",
       period: "2022 - 2023",
       titleKey: "work.pwc.title"
     }
@@ -133,7 +133,7 @@ export default function AboutPage() {
                     <h3 className="font-semibold text-foreground">{t(edu.schoolKey)}</h3>
                     <span className="text-sm text-muted-foreground">{edu.period}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-1">{edu.location}</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t(edu.locationKey)}</p>
                   <p className="text-muted-foreground">{t(edu.degreeKey)}</p>
                   {edu.minorKey && (
                     <p className="text-sm text-muted-foreground mt-1">{t(edu.minorKey)}</p>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                     <h3 className="font-semibold text-foreground">{t(work.companyKey)}</h3>
                     <span className="text-sm text-muted-foreground">{work.period}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-1">{work.location}</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t(work.locationKey)}</p>
                   <p className="text-muted-foreground">{t(work.titleKey)}</p>
                 </div>
               </div>
