@@ -44,7 +44,16 @@ export default function HomePage() {
                   AI Product Builder
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  MEng in Systems Design Engineer @ University of Waterloo
+                  MEng in System Design Engineer @ University of Waterloo
+                </p>
+                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+                  iFlytek Certified AI Engineer
+                </p>
+                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+                  Data Analyst
+                </p>
+                <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+                  UX Researcher
                 </p>
               </div>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
@@ -100,7 +109,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()}  Chen. All rights reserved.
+          © {new Date().getFullYear()} Jayden Chen. All rights reserved.
         </p>
       </footer>
     </div>

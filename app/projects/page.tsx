@@ -9,9 +9,9 @@ const projects = [
     id: "driver-drowsiness",
     title: "Drowsiness Detection and Alert System for Driving Safety",
     icon: Eye,
-    overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning.",
+    overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning, and alarm in vision, hearing and touch.",
     problem: "Driver drowsiness is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
-    solution: "Developed a lightweight convolutional neural network (CNN) to analyze driver facial features and head movements for real-time drowsiness detection.",
+    solution: "Developed a lightweight convolutional neural network (CNN) to analyze driver facial features including eye closure and mouth opening frequency for real-time drowsiness detection.",
     role: [
       "Product requirement definition",
       "CNN model design",
