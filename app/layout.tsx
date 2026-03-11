@@ -4,17 +4,17 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-inter'
 });
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: '--font-jetbrains-mono'
 });
 
 export const metadata: Metadata = {
-  title: 'Junyan Chen | AI Product Builder',
+  title: 'Jayden Chen | AI Product Builder',
   description: 'AI Product Builder & Systems Design Engineer - Building AI-powered products through human-centered design and rapid prototyping.',
   generator: 'v0.app',
   icons: {
