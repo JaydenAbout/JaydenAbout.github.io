@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
+import { LanguageProvider } from '@/lib/language-context'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,9 +45,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground`}>
-        <Navigation />
-        <main>{children}</main>
-        <Analytics />
+        <LanguageProvider>
+          <Navigation />
+          <main>{children}</main>
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   )

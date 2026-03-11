@@ -3,74 +3,77 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { Eye, Lightbulb, TrendingUp, ChevronRight } from "lucide-react"
-
-const projects = [
-  {
-    id: "driver-drowsiness",
-    title: "Drowsiness Detection and Alert System for Driving Safety",
-    period: "2024 - 2025",
-    icon: Eye,
-    overview: "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning, and alarm in vision, hearing and touch.",
-    problem: "Driver drowsiness is one of the major causes of traffic accidents, yet it is difficult to detect in real time before dangerous situations occur.",
-    targetUsers: "Long-haul truck drivers, ride-share drivers, and fleet management companies seeking to reduce fatigue-related accidents.",
-    productIdea: "A non-intrusive, camera-based monitoring solution that continuously analyzes driver alertness and delivers timely multi-sensory alerts (visual, audio, haptic) before dangerous drowsiness levels are reached.",
-    role: [
-      "Product requirement definition",
-      "CNN model design",
-      "Human-machine interaction prototype",
-      "Hardware and software integration"
-    ],
-    impact: [
-      { label: "Drowsiness Detection Accuracy", value: "95%" },
-      { label: "Inference Latency", value: "40 ms" },
-      { label: "Monitoring Capability", value: "Real-time" }
-    ]
-  },
-  {
-    id: "fitune",
-    title: "Fitune AI Nutrition Project",
-    period: "2025 - 2026",
-    icon: Lightbulb,
-    overview: "Fitune is an AI-assisted nutrition and fitness tracking concept designed to simplify daily diet management and help users maintain sustainable fitness habits.",
-    problem: "Most fitness tracking apps require manual calorie counting and provide limited personalized feedback, which makes long-term adherence difficult.",
-    targetUsers: "Health-conscious individuals and fitness enthusiasts who want effortless diet tracking without tedious manual input.",
-    productIdea: "An intelligent nutrition companion that uses AI to automatically estimate meals, track macros, and deliver personalized dietary insights that adapt to each user's goals and eating patterns.",
-    role: [
-      "Product concept design",
-      "User journey design",
-      "Data structure and analytics planning",
-      "AI-assisted prototyping"
-    ],
-    futureDirection: [
-      "AI-powered meal recognition",
-      "Personalized nutrition recommendations",
-      "Wearable device integration"
-    ]
-  },
-  {
-    id: "business-analytics",
-    title: "Business Analytics Project",
-    period: "2024",
-    icon: TrendingUp,
-    overview: "A business analytics study using financial and market data to evaluate growth opportunities in the electronics recycling industry.",
-    keyWork: [
-      "Analyzed financial datasets using SPSS",
-      "Identified industry trends using SQL",
-      "Built Power BI dashboards for data visualization",
-      "Presented insights to stakeholders"
-    ]
-  }
-]
+import { useLanguage } from "@/lib/language-context"
 
 export default function ProjectsPage() {
-  const [activeProject, setActiveProject] = useState(projects[0].id)
+  const { t } = useLanguage()
+  const [activeProject, setActiveProject] = useState("driver-drowsiness")
+
+  const projects = [
+    {
+      id: "driver-drowsiness",
+      titleKey: "project.drowsiness.title",
+      period: "2024 - 2025",
+      icon: Eye,
+      overviewKey: "project.drowsiness.overview",
+      problemKey: "project.drowsiness.problem",
+      targetUsersKey: "project.drowsiness.targetUsers",
+      productIdeaKey: "project.drowsiness.productIdea",
+      roleKeys: [
+        "project.drowsiness.role1",
+        "project.drowsiness.role2",
+        "project.drowsiness.role3",
+        "project.drowsiness.role4"
+      ],
+      impact: [
+        { labelKey: "project.drowsiness.impact1", value: "95%" },
+        { labelKey: "project.drowsiness.impact2", value: "40 ms" },
+        { labelKey: "project.drowsiness.impact3", valueKey: "project.drowsiness.impactValue3" }
+      ]
+    },
+    {
+      id: "fitune",
+      titleKey: "project.fitune.title",
+      period: "2025 - 2026",
+      icon: Lightbulb,
+      overviewKey: "project.fitune.overview",
+      problemKey: "project.fitune.problem",
+      targetUsersKey: "project.fitune.targetUsers",
+      productIdeaKey: "project.fitune.productIdea",
+      roleKeys: [
+        "project.fitune.role1",
+        "project.fitune.role2",
+        "project.fitune.role3",
+        "project.fitune.role4"
+      ],
+      futureDirectionKeys: [
+        "project.fitune.future1",
+        "project.fitune.future2",
+        "project.fitune.future3"
+      ]
+    },
+    {
+      id: "business-analytics",
+      titleKey: "project.analytics.title",
+      period: "2024",
+      icon: TrendingUp,
+      overviewKey: "project.analytics.overview",
+      keyWorkKeys: [
+        "project.analytics.work1",
+        "project.analytics.work2",
+        "project.analytics.work3",
+        "project.analytics.work4"
+      ]
+    }
+  ]
+
   const currentProject = projects.find(p => p.id === activeProject)
 
   return (
     <div className="min-h-screen pt-16">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-          Projects
+          {t("projects.title")}
         </h1>
 
         <div className="flex flex-col lg:flex-row gap-8">
@@ -89,7 +92,7 @@ export default function ProjectsPage() {
                     )}
                   >
                     <project.icon className="h-5 w-5 flex-shrink-0" />
-                    <span className="text-sm font-medium">{project.title}</span>
+                    <span className="text-sm font-medium">{t(project.titleKey)}</span>
                     <ChevronRight className={cn(
                       "h-4 w-4 ml-auto hidden lg:block transition-transform",
                       activeProject === project.id && "text-primary"
@@ -108,129 +111,129 @@ export default function ProjectsPage() {
                   <currentProject.icon className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                      {currentProject.title}
+                      {t(currentProject.titleKey)}
                     </h2>
-                    {"period" in currentProject && currentProject.period && (
-                      <p className="text-sm text-muted-foreground mt-1">{currentProject.period}</p>
-                    )}
+                    <p className="text-sm text-muted-foreground mt-1">{currentProject.period}</p>
                   </div>
                 </div>
 
                 <div className="space-y-8">
-                    {/* Overview */}
+                  {/* Overview */}
+                  <section>
+                    <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                      {t("projects.overview")}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t(currentProject.overviewKey)}
+                    </p>
+                  </section>
+
+                  {/* Problem */}
+                  {"problemKey" in currentProject && (
                     <section>
                       <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                        Overview
+                        {t("projects.problem")}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {currentProject.overview}
+                        {t(currentProject.problemKey)}
                       </p>
                     </section>
+                  )}
 
-                    {/* Problem */}
-                    {"problem" in currentProject && currentProject.problem && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Problem
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {currentProject.problem}
-                        </p>
-                      </section>
-                    )}
+                  {/* Target Users */}
+                  {"targetUsersKey" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.targetUsers")}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(currentProject.targetUsersKey)}
+                      </p>
+                    </section>
+                  )}
 
-                    {/* Target Users */}
-                    {"targetUsers" in currentProject && currentProject.targetUsers && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Target Users
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {currentProject.targetUsers}
-                        </p>
-                      </section>
-                    )}
+                  {/* Product Idea */}
+                  {"productIdeaKey" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.productIdea")}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(currentProject.productIdeaKey)}
+                      </p>
+                    </section>
+                  )}
 
-                    {/* Product Idea */}
-                    {"productIdea" in currentProject && currentProject.productIdea && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Product Idea
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {currentProject.productIdea}
-                        </p>
-                      </section>
-                    )}
+                  {/* My Role */}
+                  {"roleKeys" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.myRole")}
+                      </h3>
+                      <ul className="space-y-2">
+                        {currentProject.roleKeys.map((key, index) => (
+                          <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                            <span className="text-primary mt-1.5">•</span>
+                            {t(key)}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                    {/* My Role */}
-                    {"role" in currentProject && currentProject.role && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          My Role
-                        </h3>
-                        <ul className="space-y-2">
-                          {currentProject.role.map((item, index) => (
-                            <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                              <span className="text-primary mt-1.5">•</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
+                  {/* Key Work */}
+                  {"keyWorkKeys" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.keyWork")}
+                      </h3>
+                      <ul className="space-y-2">
+                        {currentProject.keyWorkKeys.map((key, index) => (
+                          <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                            <span className="text-primary mt-1.5">•</span>
+                            {t(key)}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                    {/* Key Work */}
-                    {"keyWork" in currentProject && currentProject.keyWork && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Key Work
-                        </h3>
-                        <ul className="space-y-2">
-                          {currentProject.keyWork.map((item, index) => (
-                            <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                              <span className="text-primary mt-1.5">•</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
+                  {/* Impact */}
+                  {"impact" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.impact")}
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {currentProject.impact.map((item, index) => (
+                          <div key={index} className="bg-background rounded-lg p-4 border border-border">
+                            <p className="text-2xl font-bold text-primary mb-1">
+                              {"valueKey" in item ? t(item.valueKey) : item.value}
+                            </p>
+                            <p className="text-sm text-muted-foreground">{t(item.labelKey)}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  )}
 
-                    {/* Impact */}
-                    {"impact" in currentProject && currentProject.impact && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Impact
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                          {currentProject.impact.map((item, index) => (
-                            <div key={index} className="bg-background rounded-lg p-4 border border-border">
-                              <p className="text-2xl font-bold text-primary mb-1">{item.value}</p>
-                              <p className="text-sm text-muted-foreground">{item.label}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-
-                    {/* Future Direction */}
-                    {"futureDirection" in currentProject && currentProject.futureDirection && (
-                      <section>
-                        <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-                          Future Direction
-                        </h3>
-                        <ul className="space-y-2">
-                          {currentProject.futureDirection.map((item, index) => (
-                            <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                              <span className="text-primary mt-1.5">•</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
-                  </div>
+                  {/* Future Direction */}
+                  {"futureDirectionKeys" in currentProject && (
+                    <section>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                        {t("projects.futureDirection")}
+                      </h3>
+                      <ul className="space-y-2">
+                        {currentProject.futureDirectionKeys.map((key, index) => (
+                          <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                            <span className="text-primary mt-1.5">•</span>
+                            {t(key)}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+                </div>
               </article>
             )}
           </div>
@@ -240,7 +243,7 @@ export default function ProjectsPage() {
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Jayden Chen. All rights reserved.
+          © {new Date().getFullYear()} {t("home.title")}. {t("home.footer")}
         </p>
       </footer>
     </div>

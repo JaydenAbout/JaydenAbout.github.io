@@ -1,94 +1,96 @@
 "use client"
 
 import { useState } from "react"
-import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github, X, ChevronLeft, ChevronRight, Phone } from "lucide-react"
+import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Phone, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
-
-const iflytekCertImages = [
-  { src: "/images/cert-tune.png", title: "Fine-tuning Engineer" },
-  { src: "/images/cert-rag.png", title: "RAG Engineer" },
-  { src: "/images/cert-prompt.png", title: "Prompt Engineer" },
-  { src: "/images/cert-agent.png", title: "Intelligent Agent Engineer" },
-]
-
-const skills = [
-  {
-    category: "AI & Data",
-    icon: Code,
-    items: ["Python", "SQL", "R", "SPSS"]
-  },
-  {
-    category: "AI Development",
-    icon: Code,
-    items: ["Keras", "OpenCV", "CNN"]
-  },
-  {
-    category: "Product & Design",
-    icon: Palette,
-    items: ["Figma", "Canva", "Human Factors Design"]
-  },
-  {
-    category: "Analytics",
-    icon: BarChart3,
-    items: ["Power BI", "Data Visualization"]
-  }
-]
-
-const education = [
-  {
-    school: "University of Waterloo",
-    location: "Waterloo, ON, Canada",
-    period: "2024 - 2025",
-    degree: "Master of Engineering – Systems Design Engineering"
-  },
-  {
-    school: "Truman State University",
-    location: "Kirksville, MO, USA",
-    period: "2018 - 2022",
-    degree: "Bachelor of Science – Mathematics",
-    minor: "Minor in Statistics"
-  }
-]
-
-const workExperience = [
-  {
-    company: "PricewaterhouseCoopers (PwC) Chengdu SDC",
-    location: "Chengdu, China",
-    period: "2022 - 2023",
-    title: "Associate, Data Analysis"
-  }
-]
-
-const certifications = [
-  { name: "iFLYTEK AI Engineer Certification", hasImages: true },
-  { name: "University Academic Scholarships", hasImages: false }
-]
-
-const contactLinks = [
-  {
-    label: "QQ Mail",
-    icon: Mail,
-    href: "mailto:741263218@qq.com"
-  },
-  {
-    label: "Outlook",
-    icon: Mail,
-    href: "mailto:Jaydenabout@outlook.com"
-  },
-  {
-    label: "Phone",
-    icon: Phone,
-    href: "tel:13488940508"
-  },
-]
+import { useLanguage } from "@/lib/language-context"
 
 export default function AboutPage() {
+  const { t } = useLanguage()
   const [certModalOpen, setCertModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const iflytekCertImages = [
+    { src: "/images/cert-tune.png", titleKey: "about.cert.tune" },
+    { src: "/images/cert-rag.png", titleKey: "about.cert.rag" },
+    { src: "/images/cert-prompt.png", titleKey: "about.cert.prompt" },
+    { src: "/images/cert-agent.png", titleKey: "about.cert.agent" },
+  ]
+
+  const skills = [
+    {
+      categoryKey: "skills.aiData",
+      icon: Code,
+      items: ["Python", "SQL", "R", "SPSS"]
+    },
+    {
+      categoryKey: "skills.aiDev",
+      icon: Code,
+      items: ["Keras", "OpenCV", "CNN"]
+    },
+    {
+      categoryKey: "skills.productDesign",
+      icon: Palette,
+      items: ["Figma", "Canva", "Human Factors Design"]
+    },
+    {
+      categoryKey: "skills.analytics",
+      icon: BarChart3,
+      items: ["Power BI", "Data Visualization"]
+    }
+  ]
+
+  const education = [
+    {
+      schoolKey: "edu.waterloo",
+      location: "Waterloo, ON, Canada",
+      period: "2024 - 2025",
+      degreeKey: "edu.waterloo.degree"
+    },
+    {
+      schoolKey: "edu.truman",
+      location: "Kirksville, MO, USA",
+      period: "2018 - 2022",
+      degreeKey: "edu.truman.degree",
+      minorKey: "edu.truman.minor"
+    }
+  ]
+
+  const workExperience = [
+    {
+      companyKey: "work.pwc",
+      location: "Chengdu, China",
+      period: "2022 - 2023",
+      titleKey: "work.pwc.title"
+    }
+  ]
+
+  const certifications = [
+    { nameKey: "about.cert.iflytek", hasImages: true },
+    { nameKey: "about.cert.scholarship", hasImages: false }
+  ]
+
+  const contactLinks = [
+    {
+      label: "QQ Mail",
+      icon: Mail,
+      href: "mailto:741263218@qq.com"
+    },
+    {
+      label: "Outlook",
+      icon: Mail,
+      href: "mailto:Jaydenabout@outlook.com"
+    },
+    {
+      label: "Phone",
+      icon: Phone,
+      href: "tel:13488940508"
+    },
+  ]
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % iflytekCertImages.length)
@@ -103,28 +105,24 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-24">
         {/* Header */}
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-          About
+          {t("about.title")}
         </h1>
 
         {/* Bio Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            Bio
+            {t("about.bio")}
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              I am a Systems Design Engineering graduate from the University of Waterloo with a background in mathematics and data analysis.
-            </p>
-            <p>
-              I focus on building AI-powered products that combine data insights, machine learning, and user-centered design to solve real-world problems.
-            </p>
+            <p>{t("about.bio1")}</p>
+            <p>{t("about.bio2")}</p>
           </div>
         </section>
 
         {/* Education Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-            Education
+            {t("about.education")}
           </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
@@ -132,13 +130,13 @@ export default function AboutPage() {
                 <GraduationCap className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-                    <h3 className="font-semibold text-foreground">{edu.school}</h3>
+                    <h3 className="font-semibold text-foreground">{t(edu.schoolKey)}</h3>
                     <span className="text-sm text-muted-foreground">{edu.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mb-1">{edu.location}</p>
-                  <p className="text-muted-foreground">{edu.degree}</p>
-                  {edu.minor && (
-                    <p className="text-sm text-muted-foreground mt-1">{edu.minor}</p>
+                  <p className="text-muted-foreground">{t(edu.degreeKey)}</p>
+                  {edu.minorKey && (
+                    <p className="text-sm text-muted-foreground mt-1">{t(edu.minorKey)}</p>
                   )}
                 </div>
               </div>
@@ -149,7 +147,7 @@ export default function AboutPage() {
         {/* Work Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-            Work
+            {t("about.work")}
           </h2>
           <div className="space-y-6">
             {workExperience.map((work, index) => (
@@ -157,11 +155,11 @@ export default function AboutPage() {
                 <Briefcase className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-                    <h3 className="font-semibold text-foreground">{work.company}</h3>
+                    <h3 className="font-semibold text-foreground">{t(work.companyKey)}</h3>
                     <span className="text-sm text-muted-foreground">{work.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mb-1">{work.location}</p>
-                  <p className="text-muted-foreground">{work.title}</p>
+                  <p className="text-muted-foreground">{t(work.titleKey)}</p>
                 </div>
               </div>
             ))}
@@ -171,14 +169,14 @@ export default function AboutPage() {
         {/* Skills Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-            Skills
+            {t("about.skills")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {skills.map((skill, index) => (
               <div key={index} className="p-4 rounded-lg bg-card border border-border">
                 <div className="flex items-center gap-2 mb-3">
                   <skill.icon className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold text-foreground">{skill.category}</h3>
+                  <h3 className="font-semibold text-foreground">{t(skill.categoryKey)}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {skill.items.map((item, itemIndex) => (
@@ -198,7 +196,7 @@ export default function AboutPage() {
         {/* Certifications Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-            Certifications & Awards
+            {t("about.certifications")}
           </h2>
           <div className="space-y-3">
             {certifications.map((cert, index) => (
@@ -208,9 +206,9 @@ export default function AboutPage() {
                 onClick={() => cert.hasImages && setCertModalOpen(true)}
               >
                 <Award className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-foreground">{cert.name}</span>
+                <span className="text-foreground">{t(cert.nameKey)}</span>
                 {cert.hasImages && (
-                  <span className="ml-auto text-xs text-muted-foreground">Click to view</span>
+                  <span className="ml-auto text-xs text-muted-foreground">{t("about.clickToView")}</span>
                 )}
               </div>
             ))}
@@ -221,7 +219,7 @@ export default function AboutPage() {
         <Dialog open={certModalOpen} onOpenChange={setCertModalOpen}>
           <DialogContent className="max-w-4xl p-0 overflow-hidden bg-card">
             <VisuallyHidden>
-              <DialogTitle>iFLYTEK AI Certifications</DialogTitle>
+              <DialogTitle>{t("about.cert.iflytek")}</DialogTitle>
             </VisuallyHidden>
             <div className="relative">
               {/* Close button */}
@@ -238,7 +236,7 @@ export default function AboutPage() {
               <div className="relative aspect-[1.414/1] w-full">
                 <Image
                   src={iflytekCertImages[currentImageIndex].src}
-                  alt={iflytekCertImages[currentImageIndex].title}
+                  alt={t(iflytekCertImages[currentImageIndex].titleKey)}
                   fill
                   className="object-contain"
                 />
@@ -269,7 +267,7 @@ export default function AboutPage() {
               {/* Caption and dots */}
               <div className="p-4 bg-card border-t border-border">
                 <p className="text-center font-medium text-foreground mb-2">
-                  {iflytekCertImages[currentImageIndex].title}
+                  {t(iflytekCertImages[currentImageIndex].titleKey)}
                 </p>
                 <div className="flex justify-center gap-2">
                   {iflytekCertImages.map((_, index) => (
@@ -288,7 +286,7 @@ export default function AboutPage() {
         {/* Contact Section */}
         <section className="mb-16">
           <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-6">
-            Contact
+            {t("about.contact")}
           </h2>
           <div className="flex flex-wrap gap-4">
             {contactLinks.map((contact, index) => (
@@ -310,7 +308,7 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Jayden Chen. All rights reserved.
+          © {new Date().getFullYear()} {t("home.title")}. {t("home.footer")}
         </p>
       </footer>
     </div>

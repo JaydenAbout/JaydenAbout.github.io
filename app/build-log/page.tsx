@@ -1,50 +1,55 @@
+"use client"
+
 import { Rocket, Sparkles, Bot, Check, Clock } from "lucide-react"
-
-const versions = [
-  {
-    version: "v0.1",
-    title: "MVP Launch",
-    status: "completed",
-    items: [
-      "Defined product structure",
-      "Generated initial UI using AI coding tools",
-      "Implemented Home, Projects, About and Build Log pages"
-    ]
-  },
-  {
-    version: "v0.2",
-    title: "UX Improvements",
-    status: "completed",
-    items: [
-      "Added profile photo to Hero section with responsive layout",
-      "Reorganized Focus Areas next to Hero content",
-      "Added time periods to project details",
-      "Created Work section in About page with PwC experience",
-      "Added location and time period info to Education section",
-      "Fixed button click interactivity issues",
-      "Removed redundant sections for cleaner layout"
-    ]
-  },
-  {
-    version: "v0.3",
-    title: "AI Module (Planned)",
-    status: "planned",
-    items: [
-      "AI portfolio assistant",
-      "Interactive project explanations",
-      "AI-powered portfolio exploration"
-    ]
-  }
-]
-
-function getStatusIcon(status: string) {
-  if (status === "completed") {
-    return <Check className="h-5 w-5 text-primary" />
-  }
-  return <Clock className="h-5 w-5 text-muted-foreground" />
-}
+import { useLanguage } from "@/lib/language-context"
 
 export default function BuildLogPage() {
+  const { t } = useLanguage()
+
+  const versions = [
+    {
+      version: "v0.1",
+      titleKey: "buildLog.v01.title",
+      status: "completed",
+      itemKeys: [
+        "buildLog.v01.item1",
+        "buildLog.v01.item2",
+        "buildLog.v01.item3"
+      ]
+    },
+    {
+      version: "v0.2",
+      titleKey: "buildLog.v02.title",
+      status: "completed",
+      itemKeys: [
+        "buildLog.v02.item1",
+        "buildLog.v02.item2",
+        "buildLog.v02.item3",
+        "buildLog.v02.item4",
+        "buildLog.v02.item5",
+        "buildLog.v02.item6",
+        "buildLog.v02.item7"
+      ]
+    },
+    {
+      version: "v0.3",
+      titleKey: "buildLog.v03.title",
+      status: "planned",
+      itemKeys: [
+        "buildLog.v03.item1",
+        "buildLog.v03.item2",
+        "buildLog.v03.item3"
+      ]
+    }
+  ]
+
+  function getStatusIcon(status: string) {
+    if (status === "completed") {
+      return <Check className="h-5 w-5 text-primary" />
+    }
+    return <Clock className="h-5 w-5 text-muted-foreground" />
+  }
+
   return (
     <div className="min-h-screen pt-16">
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-24">
@@ -53,11 +58,11 @@ export default function BuildLogPage() {
           <div className="flex items-center gap-3 mb-4">
             <Rocket className="h-8 w-8 text-primary" />
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              Build Log
+              {t("buildLog.title")}
             </h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            How this portfolio was built using AI-assisted development.
+            {t("buildLog.subtitle")}
           </p>
         </div>
 
@@ -68,7 +73,7 @@ export default function BuildLogPage() {
 
           {/* Version Entries */}
           <div className="space-y-12">
-            {versions.map((version, index) => (
+            {versions.map((version) => (
               <div key={version.version} className="relative pl-12 md:pl-20">
                 {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-4 w-8 h-8 rounded-full bg-card border-2 border-border flex items-center justify-center">
@@ -82,24 +87,24 @@ export default function BuildLogPage() {
                       {version.version}
                     </span>
                     <h2 className="text-xl md:text-2xl font-bold text-foreground">
-                      {version.title}
+                      {t(version.titleKey)}
                     </h2>
                     {version.status === "planned" && (
                       <span className="px-2 py-0.5 rounded text-xs bg-muted text-muted-foreground">
-                        Planned
+                        {t("buildLog.planned")}
                       </span>
                     )}
                   </div>
 
                   <ul className="space-y-3">
-                    {version.items.map((item, itemIndex) => (
+                    {version.itemKeys.map((key, itemIndex) => (
                       <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
                         {version.status === "completed" ? (
                           <Sparkles className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                         ) : (
                           <Bot className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
                         )}
-                        <span>{item}</span>
+                        <span>{t(key)}</span>
                       </li>
                     ))}
                   </ul>
@@ -112,7 +117,7 @@ export default function BuildLogPage() {
         {/* Tech Stack Note */}
         <div className="mt-16 p-6 rounded-xl bg-card border border-border">
           <h3 className="text-lg font-semibold text-foreground mb-3">
-            Built With
+            {t("buildLog.builtWith")}
           </h3>
           <div className="flex flex-wrap gap-2">
             {["Next.js", "React", "TypeScript", "Tailwind CSS", "v0.dev"].map((tech) => (
@@ -130,7 +135,7 @@ export default function BuildLogPage() {
       {/* Footer */}
       <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-border">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Jayden Chen. All rights reserved.
+          © {new Date().getFullYear()} {t("home.title")}. {t("home.footer")}
         </p>
       </footer>
     </div>
