@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                   <currentProject.icon className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                      {t(currentProject.titleKey)}
+                      {currentProject.titleKey ? t(currentProject.titleKey) : ""}
                     </h2>
                     <p className="text-sm text-muted-foreground mt-1">{currentProject.period}</p>
                   </div>
@@ -124,7 +124,7 @@ export default function ProjectsPage() {
                       {t("projects.overview")}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      {t(currentProject.overviewKey)}
+                      {currentProject.overviewKey ? t(currentProject.overviewKey) : ""}
                     </p>
                   </section>
 
@@ -135,7 +135,7 @@ export default function ProjectsPage() {
                         {t("projects.problem")}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {t(currentProject.problemKey)}
+                        {currentProject.problemKey ? t(currentProject.problemKey) : ""}
                       </p>
                     </section>
                   )}
@@ -147,7 +147,7 @@ export default function ProjectsPage() {
                         {t("projects.targetUsers")}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {t(currentProject.targetUsersKey)}
+                        {currentProject.targetUsersKey ? t(currentProject.targetUsersKey) : ""}
                       </p>
                     </section>
                   )}
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                         {t("projects.productIdea")}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        {t(currentProject.productIdeaKey)}
+                        {currentProject.productIdeaKey ? t(currentProject.productIdeaKey) : ""}
                       </p>
                     </section>
                   )}
