@@ -44,7 +44,7 @@ export default function HomePage() {
                   AI Product Builder
                 </p>
                 <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-                  Systems Design Engineer
+                  MEng in Systems Design Engineer @ University of Waterloo
                 </p>
               </div>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
@@ -55,11 +55,8 @@ export default function HomePage() {
                   <Link href="/projects">
                     View My Projects
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                  </Link>
                 </Button>
-                <span className="text-muted-foreground">
-                  Systems Design Engineering @ University of Waterloo
-                </span>
               </div>
             </div>
 
