@@ -290,7 +290,7 @@ export default function AboutPage() {
           </h2>
           <div className="flex flex-wrap gap-4">
             {contactLinks.map((contact, index) => (
-              <Link
+              <a
                 key={index}
                 href={contact.href}
                 target="_blank"
@@ -299,7 +299,7 @@ export default function AboutPage() {
               >
                 <contact.icon className="h-5 w-5" />
                 <span className="font-medium">{contact.label}</span>
-              </Link>
+              </a>
             ))}
           </div>
         </section>

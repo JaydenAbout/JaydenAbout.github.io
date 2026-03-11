@@ -79,13 +79,13 @@ export default function ProjectsPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Panel - Project Navigation */}
           <nav className="lg:w-80 flex-shrink-0">
-            <ul className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0">
+            <ul className="flex flex-col gap-2">
               {projects.map((project) => (
                 <li key={project.id}>
                   <button
                     onClick={() => setActiveProject(project.id)}
                     className={cn(
-                      "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-200 whitespace-nowrap lg:whitespace-normal",
+                      "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-200",
                       activeProject === project.id
                         ? "bg-primary/10 text-primary border border-primary/30"
                         : "bg-card text-muted-foreground hover:bg-card/80 hover:text-foreground border border-transparent"
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
                     <project.icon className="h-5 w-5 flex-shrink-0" />
                     <span className="text-sm font-medium">{t(project.titleKey)}</span>
                     <ChevronRight className={cn(
-                      "h-4 w-4 ml-auto hidden lg:block transition-transform",
+                      "h-4 w-4 ml-auto transition-transform",
                       activeProject === project.id && "text-primary"
                     )} />
                   </button>
