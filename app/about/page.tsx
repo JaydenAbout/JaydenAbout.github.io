@@ -1,5 +1,19 @@
-import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { GraduationCap, Briefcase, Code, Palette, BarChart3, Award, Mail, Linkedin, Github, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+
+const iflytekCertImages = [
+  { src: "/images/cert-tune.png", title: "Fine-tuning Engineer" },
+  { src: "/images/cert-rag.png", title: "RAG Engineer" },
+  { src: "/images/cert-prompt.png", title: "Prompt Engineer" },
+  { src: "/images/cert-agent.png", title: "Intelligent Agent Engineer" },
+]
 
 const skills = [
   {
@@ -50,8 +64,8 @@ const workExperience = [
 ]
 
 const certifications = [
-  "iFLYTEK AI Engineer Certification",
-  "University Academic Scholarships"
+  { name: "iFLYTEK AI Engineer Certification", hasImages: true },
+  { name: "University Academic Scholarships", hasImages: false }
 ]
 
 const contactLinks = [
@@ -73,6 +87,17 @@ const contactLinks = [
 ]
 
 export default function AboutPage() {
+  const [certModalOpen, setCertModalOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % iflytekCertImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + iflytekCertImages.length) % iflytekCertImages.length)
+  }
+
   return (
     <div className="min-h-screen pt-16">
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-24">
@@ -177,13 +202,88 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-3">
             {certifications.map((cert, index) => (
-              <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border">
+              <div 
+                key={index} 
+                className={`flex items-center gap-3 p-4 rounded-lg bg-card border border-border ${cert.hasImages ? 'cursor-pointer hover:border-primary/50 transition-colors' : ''}`}
+                onClick={() => cert.hasImages && setCertModalOpen(true)}
+              >
                 <Award className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-foreground">{cert}</span>
+                <span className="text-foreground">{cert.name}</span>
+                {cert.hasImages && (
+                  <span className="ml-auto text-xs text-muted-foreground">Click to view</span>
+                )}
               </div>
             ))}
           </div>
         </section>
+
+        {/* Certificate Images Modal */}
+        <Dialog open={certModalOpen} onOpenChange={setCertModalOpen}>
+          <DialogContent className="max-w-4xl p-0 overflow-hidden bg-card">
+            <VisuallyHidden>
+              <DialogTitle>iFLYTEK AI Certifications</DialogTitle>
+            </VisuallyHidden>
+            <div className="relative">
+              {/* Close button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-10 bg-background/80 hover:bg-background"
+                onClick={() => setCertModalOpen(false)}
+              >
+                <X className="h-4 w-4" />
+              </Button>
+
+              {/* Image */}
+              <div className="relative aspect-[1.414/1] w-full">
+                <Image
+                  src={iflytekCertImages[currentImageIndex].src}
+                  alt={iflytekCertImages[currentImageIndex].title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Navigation */}
+              <div className="absolute inset-y-0 left-0 flex items-center">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="ml-2 bg-background/80 hover:bg-background"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="mr-2 bg-background/80 hover:bg-background"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Caption and dots */}
+              <div className="p-4 bg-card border-t border-border">
+                <p className="text-center font-medium text-foreground mb-2">
+                  {iflytekCertImages[currentImageIndex].title}
+                </p>
+                <div className="flex justify-center gap-2">
+                  {iflytekCertImages.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? 'bg-primary' : 'bg-muted-foreground/30'}`}
+                      onClick={() => setCurrentImageIndex(index)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Contact Section */}
         <section className="mb-16">
