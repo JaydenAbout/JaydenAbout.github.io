@@ -17,7 +17,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.projects": "Projects",
     "nav.buildLog": "Build Log",
     "nav.about": "About",
-    
+
     // Home Page
     "home.title": "Jayden Chen",
     "home.role": "AI Product Manager",
@@ -34,7 +34,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.focus.dataDesign": "Data-Driven Product Design",
     "home.focus.dataDesignDesc": "Leveraging data insights for informed product decisions",
     "home.footer": "All rights reserved.",
-    
+
     // Projects Page
     "projects.title": "Projects",
     "projects.overview": "Overview",
@@ -45,7 +45,7 @@ const translations: Record<Language, Record<string, string>> = {
     "projects.keyWork": "Key Work",
     "projects.impact": "Impact",
     "projects.futureDirection": "Future Direction",
-    
+
     // Project 1 - Drowsiness Detection
     "project.drowsiness.title": "Drowsiness Detection and Alert System for Driving Safety",
     "project.drowsiness.overview": "An AI-powered driver drowsiness monitoring system designed to detect early signs of driver drowsiness using computer vision and deep learning, and alarm in vision, hearing and touch.",
@@ -60,7 +60,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.drowsiness.impact2": "Inference Latency",
     "project.drowsiness.impact3": "Monitoring Capability",
     "project.drowsiness.impactValue3": "Real-time",
-    
+
     // Project 2 - Fitune
     "project.fitune.title": "Fitune AI Nutrition Project",
     "project.fitune.overview": "Fitune is an AI-assisted nutrition and fitness tracking concept designed to simplify daily diet management and help users maintain sustainable fitness habits.",
@@ -74,7 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.fitune.future1": "AI-powered meal recognition",
     "project.fitune.future2": "Personalized nutrition recommendations",
     "project.fitune.future3": "Wearable device integration",
-    
+
     // Project 3 - Business Analytics
     "project.analytics.title": "Business Analytics Project",
     "project.analytics.overview": "A business analytics study using financial and market data to evaluate growth opportunities in the electronics recycling industry.",
@@ -82,7 +82,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.analytics.work2": "Identified industry trends using SQL",
     "project.analytics.work3": "Built Power BI dashboards for data visualization",
     "project.analytics.work4": "Presented insights to stakeholders",
-    
+
     // Build Log Page
     "buildLog.title": "Build Log",
     "buildLog.subtitle": "How this portfolio was built using AI-assisted development.",
@@ -104,7 +104,7 @@ const translations: Record<Language, Record<string, string>> = {
     "buildLog.v03.item1": "AI portfolio assistant",
     "buildLog.v03.item2": "Interactive project explanations",
     "buildLog.v03.item3": "AI-powered portfolio exploration",
-    
+
     // About Page
     "about.title": "About",
     "about.bio": "Bio",
@@ -122,18 +122,21 @@ const translations: Record<Language, Record<string, string>> = {
     "about.cert.rag": "RAG Engineer",
     "about.cert.prompt": "Prompt Engineer",
     "about.cert.agent": "Intelligent Agent Engineer",
-    
+
     // Education
     "edu.waterloo": "University of Waterloo",
+    "edu.waterloo.place": "Waterloo, ON, Canada",
     "edu.waterloo.degree": "Master of Engineering – Systems Design Engineering",
     "edu.truman": "Truman State University",
+    "edu.truman.place": "Kirksville, MO, USA",
     "edu.truman.degree": "Bachelor of Science – Mathematics",
     "edu.truman.minor": "Minor in Statistics",
-    
+
     // Work
     "work.pwc": "PricewaterhouseCoopers (PwC) Chengdu SDC",
+    "work.pwc.place": "Chengdu, Sichuan, China",
     "work.pwc.title": "Associate, Data Analysis",
-    
+
     // Skills
     "skills.aiData": "AI & Data",
     "skills.aiDev": "AI Development",
@@ -146,7 +149,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.projects": "项目",
     "nav.buildLog": "开发日志",
     "nav.about": "关于",
-    
+
     // Home Page
     "home.title": "陈俊言",
     "home.role": "AI 产品经理",
@@ -163,7 +166,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.focus.dataDesign": "数据驱动的产品设计",
     "home.focus.dataDesignDesc": "利用数据洞察做出明智的产品决策",
     "home.footer": "版权所有。",
-    
+
     // Projects Page
     "projects.title": "项目",
     "projects.overview": "概述",
@@ -174,7 +177,7 @@ const translations: Record<Language, Record<string, string>> = {
     "projects.keyWork": "主要工作",
     "projects.impact": "影响",
     "projects.futureDirection": "未来方向",
-    
+
     // Project 1 - Drowsiness Detection
     "project.drowsiness.title": "驾驶安全疲劳检测与预警系统",
     "project.drowsiness.overview": "一款基于 AI 的驾驶员疲劳监测系统，利用计算机视觉和深度学习检测驾驶员早期疲劳迹象，并通过视觉、听觉和触觉方式发出警报。",
@@ -189,7 +192,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.drowsiness.impact2": "推理延迟",
     "project.drowsiness.impact3": "监测能力",
     "project.drowsiness.impactValue3": "实时",
-    
+
     // Project 2 - Fitune
     "project.fitune.title": "Fitune AI 营养项目",
     "project.fitune.overview": "Fitune 是一款 AI 辅助的营养和健身追踪概念，旨在简化日常饮食管理，帮助用户保持可持续的健身习惯。",
@@ -203,7 +206,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.fitune.future1": "AI 驱动的餐食识别",
     "project.fitune.future2": "个性化营养建议",
     "project.fitune.future3": "可穿戴设备集成",
-    
+
     // Project 3 - Business Analytics
     "project.analytics.title": "商业分析项目",
     "project.analytics.overview": "一项使用财务和市场数据评估电子回收行业增长机会的商业分析研究。",
@@ -211,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
     "project.analytics.work2": "使用 SQL 识别行业趋势",
     "project.analytics.work3": "构建 Power BI 仪表板进行数据可视化",
     "project.analytics.work4": "向利益相关者展示洞察",
-    
+
     // Build Log Page
     "buildLog.title": "开发日志",
     "buildLog.subtitle": "这个作品集是如何使用 AI 辅助开发构建的。",
@@ -222,8 +225,8 @@ const translations: Record<Language, Record<string, string>> = {
     "buildLog.v01.item2": "使用 AI 编码工具生成初始 UI",
     "buildLog.v01.item3": "实现首页、项目、关于和开发日志页面",
     "buildLog.v02.title": "用户体验改进",
-    "buildLog.v02.item1": "在 Hero 区域添加响应式布局的个人照片",
-    "buildLog.v02.item2": "重新组织 Hero 内容旁的专注领域",
+    "buildLog.v02.item1": "在首页首屏区域添加响应式布局的个人照片",
+    "buildLog.v02.item2": "重新组织首页首屏内容旁的专注领域",
     "buildLog.v02.item3": "为项目详情添加时间段",
     "buildLog.v02.item4": "在关于页面创建包含普华永道经历的工作区块",
     "buildLog.v02.item5": "为教育区块添加地点和时间信息",
@@ -233,7 +236,7 @@ const translations: Record<Language, Record<string, string>> = {
     "buildLog.v03.item1": "AI 作品集助手",
     "buildLog.v03.item2": "交互式项目说明",
     "buildLog.v03.item3": "AI 驱动的作品集探索",
-    
+
     // About Page
     "about.title": "关于",
     "about.bio": "简介",
@@ -251,18 +254,21 @@ const translations: Record<Language, Record<string, string>> = {
     "about.cert.rag": "RAG 工程师",
     "about.cert.prompt": "Prompt 工程师",
     "about.cert.agent": "智能体工程师",
-    
+
     // Education
     "edu.waterloo": "滑铁卢大学",
+    "edu.waterloo.place": "加拿大安大略省滑铁卢市",
     "edu.waterloo.degree": "工程硕士 – 系统设计工程",
     "edu.truman": "杜鲁门州立大学",
+    "edu.truman.place": "美国密苏里州柯克斯维尔市",
     "edu.truman.degree": "理学学士 – 数学",
     "edu.truman.minor": "辅修统计学",
-    
+
     // Work
-    "work.pwc": "普华永道成都共享服务中心",
+    "work.pwc": "普华永道成都SDC",
+    "work.pwc.place": "中国四川省成都市",
     "work.pwc.title": "数据分析助理",
-    
+
     // Skills
     "skills.aiData": "AI 与数据",
     "skills.aiDev": "AI 开发",

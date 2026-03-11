@@ -63,7 +63,7 @@ export default function AboutPage() {
   const workExperience = [
     {
       companyKey: "work.pwc",
-      location: "Chengdu, China",
+      location: "Chengdu, Sichuan, China",
       period: "2022 - 2023",
       titleKey: "work.pwc.title"
     }
