@@ -208,7 +208,7 @@ export default function ProjectsPage() {
                         {currentProject.impact?.map((item, index) => (
                           <div key={index} className="bg-background rounded-lg p-4 border border-border">
                             <p className="text-2xl font-bold text-primary mb-1">
-                              {"valueKey" in item ? t(item.valueKey) : item.value}
+                              {item.valueKey ? t(item.valueKey) : item.value}
                             </p>
                             <p className="text-sm text-muted-foreground">{t(item.labelKey)}</p>
                           </div>
