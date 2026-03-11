@@ -171,7 +171,7 @@ export default function ProjectsPage() {
                         {t("projects.myRole")}
                       </h3>
                       <ul className="space-y-2">
-                        {currentProject.roleKeys.map((key, index) => (
+                        {currentProject.roleKeys?.map((key, index) => (
                           <li key={index} className="flex items-start gap-2 text-muted-foreground">
                             <span className="text-primary mt-1.5">•</span>
                             {t(key)}
@@ -188,7 +188,7 @@ export default function ProjectsPage() {
                         {t("projects.keyWork")}
                       </h3>
                       <ul className="space-y-2">
-                        {currentProject.keyWorkKeys.map((key, index) => (
+                        {currentProject.keyWorkKeys?.map((key, index) => (
                           <li key={index} className="flex items-start gap-2 text-muted-foreground">
                             <span className="text-primary mt-1.5">•</span>
                             {t(key)}
@@ -205,7 +205,7 @@ export default function ProjectsPage() {
                         {t("projects.impact")}
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        {currentProject.impact.map((item, index) => (
+                        {currentProject.impact?.map((item, index) => (
                           <div key={index} className="bg-background rounded-lg p-4 border border-border">
                             <p className="text-2xl font-bold text-primary mb-1">
                               {"valueKey" in item ? t(item.valueKey) : item.value}
@@ -224,7 +224,7 @@ export default function ProjectsPage() {
                         {t("projects.futureDirection")}
                       </h3>
                       <ul className="space-y-2">
-                        {currentProject.futureDirectionKeys.map((key, index) => (
+                        {currentProject.futureDirectionKeys?.map((key, index) => (
                           <li key={index} className="flex items-start gap-2 text-muted-foreground">
                             <span className="text-primary mt-1.5">•</span>
                             {t(key)}
