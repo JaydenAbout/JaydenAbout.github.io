@@ -32,7 +32,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-10">
             {/* Left - Hero Content */}
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
@@ -60,10 +60,8 @@ export default function HomePage() {
             </div>
 
             {/* Right - Focus Areas */}
-            <div className="lg:w-80 flex-shrink-0">
-              <h2 className="text-lg font-semibold text-foreground mb-4">
-                Focus Areas
-              </h2>
+            <div className="lg:w-72 flex-shrink-0 lg:mt-24">
+              <h2 className="text-sm font-medium text-muted-foreground mb-3">Focus Areas</h2>
               <div className="flex flex-col gap-2">
                 {focusAreas.map((area) => (
                   <div
